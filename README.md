@@ -5,7 +5,7 @@ Does not implement all endpoints.
 ## Usage
 To install, add the following to your `project.clj`:
 
-`[rabbitmq-clj "1.0.0"]`
+`[rabbitmq-clj "1.0.1"]`
 
 API documentation [here](https://github.banksimple.com/pages/ops/rabbitmq-clj/).
 

@@ -4,7 +4,7 @@
   :main         rabbitmq-clj.core
   :description  "RabbitMQ API client in Clojure."
   :url          "https://github.com/simplefinance/rabbitmq-clj"
-  :license      "All rights reserved."
+  :license      "The Apache Software License, Version 2.0"
   :repl-options {:init-ns rabbitmq-clj.core}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/tools.logging "0.2.6"]
