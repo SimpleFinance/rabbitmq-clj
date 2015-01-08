@@ -7,7 +7,7 @@ To install, add the following to your `project.clj`:
 
 `[rabbitmq-clj "1.0.1"]`
 
-API documentation [here](https://github.banksimple.com/pages/ops/rabbitmq-clj/).
+API documentation TBD!
 
 This project ships a DSL-like-thing to dispatch the correct commands. The DSL
 generally tries to follow the semantics given by
@@ -88,3 +88,6 @@ The DSL itself is as follows:
 Channel and bindings endpoints are presently unimplemented, as are several of
 the other auxiliary endpoints. These will probably be added eventually, but
 pull requests are also gladly accepted.
+
+You can see the disparity
+[here](http://hg.rabbitmq.com/rabbitmq-management/raw-file/rabbitmq_v3_4_3/priv/www/api/index.html).
