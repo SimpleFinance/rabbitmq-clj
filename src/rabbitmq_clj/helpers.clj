@@ -1,7 +1,6 @@
 (ns rabbitmq-clj.helpers
   "Tiny helpers."
-  (:require [clj-http.client :as http]
-            [cheshire.core :as json]))
+  (:require [clj-http.client :as http]))
 
 (def api "Atom containing the endpoint."
   (atom "http://guest:guest@127.0.0.1:15672"))

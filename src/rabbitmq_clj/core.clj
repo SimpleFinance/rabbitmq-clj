@@ -1,6 +1,5 @@
 (ns rabbitmq-clj.core
-  (:require [cheshire.core :as json]
-            [clj-http.client :as http]
+  (:require [clj-http.client :as http]
             [clojure.tools.logging :as log]
             [rabbitmq-clj.api.connections :as connections]
             [rabbitmq-clj.api.channels :as channels]
