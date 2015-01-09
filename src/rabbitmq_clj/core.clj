@@ -29,6 +29,20 @@
            password    "guest"}}]
   (reset! api (format "http://%s:%s@%s:%s" username password host port)))
 
+(defn arbitrary
+  "Allows you to execute an arbitrary request using HTTP method METHOD to the
+   API configured at endpoint PATH and optional PAYLOAD. This will allow at
+   least some forward-compatibility until all endpoints are implemented. An
+   example:
+
+   (rabbit/dispatch :arbitrary :get \"/api/cluster-name\""
+  [method path & payload]
+  (case method
+    :get (generic-get path)
+    :delete (generic-delete path)
+    :put (generic-put payload)
+    :post (generic-post payload)))
+
 (defn overview
   "Returns the /api/overview endpoint, which contains generic data about the
    RabbitMQ cluster."
@@ -50,4 +64,5 @@
     :policies    (apply policies/dispatch args)
     :queues      (apply queues/dispatch args)
     :users       (apply users/dispatch args)
-    :vhosts      (apply vhosts/dispatch args)))
+    :vhosts      (apply vhosts/dispatch args)
+    :arbitrary   (apply arbitrary-request args)))
