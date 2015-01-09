@@ -29,7 +29,7 @@
            password    "guest"}}]
   (reset! api (format "http://%s:%s@%s:%s" username password host port)))
 
-(defn arbitrary
+(defn arbitrary-request
   "Allows you to execute an arbitrary request using HTTP method METHOD to the
    API configured at endpoint PATH and optional PAYLOAD. This will allow at
    least some forward-compatibility until all endpoints are implemented. An
