@@ -14,20 +14,22 @@
             [rabbitmq-clj.helpers :refer :all]))
 
 (defn configure
-  "Accepts keywords HOST, PORT, USERNAME, PASSWORD, or defers to defaults
+  "Accepts hash OPTIONS with keywords HOST, PORT, USERNAME, PASSWORD, or defers
+   to defaults:
 
    * host: 127.0.0.1
    * port: 15672
    * username: guest
    * password: guest
 
-   Returns a constructed URL given the arguments."
-  [& {:keys [host port username password]
-      :or {host        "127.0.0.1"
-           port        "15672"
-           username    "guest"
-           password    "guest"}}]
-  (reset! api (format "http://%s:%s@%s:%s" username password host port)))
+   Returns a constructed URL given the arguments that is referred to under the
+   hood in all subsequent requests.."
+  [options]
+  (let [username (get options :username "guest")
+        password (get options :password "guest")
+        host (get options :host "127.0.0.1")
+        port (get options :port 15672)]
+    (reset! api (format "http://%s:%s@%s:%d" username password host port))))
 
 (defn arbitrary-request
   "Allows you to execute an arbitrary request using HTTP method METHOD to the
