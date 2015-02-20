@@ -24,12 +24,13 @@
 
    Returns a constructed URL given the arguments that is referred to under the
    hood in all subsequent requests.."
-  [options]
-  (let [username (get options :username "guest")
-        password (get options :password "guest")
-        host (get options :host "127.0.0.1")
-        port (get options :port 15672)]
-    (reset! api (format "http://%s:%s@%s:%d" username password host port))))
+  ([] (configure {}))
+  ([options]
+   (let [username (get options :username "guest")
+         password (get options :password "guest")
+         host (get options :host "127.0.0.1")
+         port (get options :port 15672)]
+     (reset! api (format "http://%s:%s@%s:%d" username password host port)))))
 
 (defn arbitrary-request
   "Allows you to execute an arbitrary request using HTTP method METHOD to the
